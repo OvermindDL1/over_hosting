@@ -1,0 +1,39 @@
+<script>window.userToken = "<%= assigns[:user_token] %>"; window.serverID = "<%= @server.id %>";</script>
+<h2>Show server</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @server.name %>
+  </li>
+
+  <li>
+    <strong>Group:</strong>
+    <%= @server.group %>
+  </li>
+
+  <li>
+    <strong>Cmd:</strong>
+    <%= @server.cmd %>
+  </li>
+
+  <li>
+    <strong>Server Type:</strong>
+    <%= @server.server_type %>
+  </li>
+
+</ul>
+
+<h2>Server Log</h2>
+<div id="e_log"></div>
+<input id="e_cmd"></input>
+<br/>
+<button id="e_load">Load Server</button>
+<button id="e_start">Start Server</button>
+<button id="e_stop">Stop Server</button>
+<button id="e_unload">Unload Server</button>
+<br/>
+
+<%= link "Edit", to: server_path(@conn, :edit, @server) %>
+<%= link "Back", to: server_path(@conn, :index) %>
